@@ -1,0 +1,36 @@
+---
+
+- name: 'connection test'
+  ping:
+  tags: ct-debug
+
+- name: 'dump some hostvars for the inventory hostname'
+  debug:
+    var: '{{item}}'
+  with_items:
+  - hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+  tags: ct-debug
+
+- name: 'dump some CT variables'
+  debug:
+    var: '{{item}}'
+  with_items:
+  - ct_cloud
+  - ct_provider
+  tags: ct-debug
+
+- name: 'dump some fact based variables'
+  debug:
+    var: '{{item}}'
+  with_items:
+  - ct_arch
+  - ct_codename
+  - ct_distro
+  - ct_distro_major
+  - ct_family
+  - ct_hypervisor
+  - ct_opsys
+  - ct_virt_role
+  tags: ct-debug
+
+...
