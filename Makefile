@@ -1,3 +1,15 @@
+lint: .ylint
+
+.ylint: */*.yml .config/yamllint
+	uv run yamllint --config-file=.config/yamllint .
+	@touch $@
+
+.PHONY: clean
+clean:
+	@/bin/rm -f .ylint
+
+# --------------------------------
+
 init-uv:
 	uv python install 3.14
 	uv init
