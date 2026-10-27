@@ -1,12 +1,12 @@
-lint: .ylint
+lint: .lintyaml
 
-.ylint: */*.yml .config/yamllint
+.lintyaml: */*.yml .config/yamllint
 	uv run yamllint --config-file=.config/yamllint .
 	@touch $@
 
 .PHONY: clean
 clean:
-	@/bin/rm -f .ylint
+	@/bin/rm -f .lint*
 
 # --------------------------------
 
