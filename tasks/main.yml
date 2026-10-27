@@ -23,14 +23,13 @@
   ansible.builtin.debug:
     var: '{{ item }}'
   with_items:
-  - ct_arch
-  - ct_codename
-  - ct_distro
-  - ct_distro_major
-  - ct_family
-  - ct_hypervisor
-  - ct_opsys
-  - ct_virt_role
+  - ansible_facts['architecture']
+  - ansible_facts['distribution']
+  - ansible_facts['distribution_major_version']
+  - ansible_facts['distribution_release']
+  - ansible_facts['os_family']
+  - ansible_facts['virtualization_role']
+  - ansible_facts['virtualization_type']
   tags: ct-debug
 
 ...
