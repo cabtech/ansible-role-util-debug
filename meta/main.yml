@@ -3,4 +3,12 @@ dependencies:
 - src: git+https://github.com/cabtech/ansible-role-util-facts.git
   tags: always
   version: '1.0.1'
+
+galaxy_info:
+  author: Tim Short
+  description: Convenient debug statements
+  license: GPL v3
+  min_ansible_version: "2"
+  namespace: cabtech
+  role_name: ansible_role_util_debug
 ...
