@@ -2,14 +2,14 @@
 
 - name: 'Connection test'
   ansible.builtin.ping:
-  tags: ct-debug
+  tags: ["ct-debug"]
 
 - name: 'Dump some hostvars for the inventory hostname'
   ansible.builtin.debug:
     var: '{{ item }}'
   with_items:
   - hostvars[inventory_hostname]['ansible_facts']['default_ipv4']['address']
-  tags: ct-debug
+  tags: ["ct-debug"]
 
 - name: 'Dump some CT variables'
   ansible.builtin.debug:
@@ -17,7 +17,7 @@
   with_items:
   - ct_cloud
   - ct_provider
-  tags: ct-debug
+  tags: ["ct-debug"]
 
 - name: 'Dump some fact based variables'
   ansible.builtin.debug:
@@ -30,6 +30,6 @@
   - ansible_facts['os_family']
   - ansible_facts['virtualization_role']
   - ansible_facts['virtualization_type']
-  tags: ct-debug
+  tags: ["ct-debug"]
 
 ...
