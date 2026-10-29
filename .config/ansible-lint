@@ -1,6 +1,10 @@
 ---
+<<<<<<< HEAD
 profile: production
 skip_list:
 - ignore-errors
+=======
+skip_list:
+>>>>>>> 1860a3c (lint)
 - yaml[indentation]
 ...
